@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "Credit is Due",
+  "version": "1.0",
+
+  "description": "Sends Uber® a support request to credit me my $15 in monthly credits",
+
+  "icons": {
+    "48": "icons/contact_mail-96.png"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "permissions": [
+      "alarms",
+      "notifications",
+      "storage",
+      "webNavigation",
+      "webRequest"
+  ],
+  "browser_action": {
+      "default_icon": {
+          "36": "icons/contact_mail-36.png"
+      },
+      "default_title": "It's that time of the month..."
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://help.uber.com/*"],
+      "js": ["support.js"]
+    }
+  ]
+
+}
