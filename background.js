@@ -2,13 +2,12 @@
 
 
 /* When clicking the add-on icon, fill out a support ticket automatically .
- *
- * TODO: This is just a stub thus far.
- */
+
+/* Automatically file a support ticket after a human-initiated login. */
 function fileSupportTicket() {
-  // Load the Uber riders' page.
-  // If the user is logged in, then we'll be redirected to a profile page
-  // Otherwise, a login form will show up
+  // If the user is logged in, then we'll be redirected to the support ticket
+  // (And a content script will take care of filling it out and submitting)
+  // Otherwise, a login form will show up. Proceed with login as normal.
   browser.tabs.create({"url": 'https://riders.uber.com'});
 }
 browser.browserAction.onClicked.addListener(fileSupportTicket);
@@ -44,6 +43,15 @@ function checkIfTicketSubmitted() {
       alertIfNeedingSubmission(storedSettings.ticketLastSubmitted);
     }, console.error);
 }
+
+function handleTicketSubmitted(request, sender, sendResponse) {
+  if (request.action == 'ticketSubmitted') {
+    browser.storage.local.set({ ticketLastSubmitted: request.timeSubmitted });
+    sendResponse({response: "Successfully recorded time of ticket submisson."});
+  }
+}
+
+browser.runtime.onMessage.addListener(handleTicketSubmitted);
 
 
 // Check on a schedule if it's time to file a new support ticket
