@@ -1,5 +1,12 @@
-/* If we need to submit a monthly support ticket, and we're logged in,
- * redirect to the page that lets me submit a ticket. */
+/* Redirect to the help page (a separate content script will auto-fill & submit)
+ * This is done via messaging because we don't always want to redirect from the trips page
+ * (we only want to redirect when we're brought there specifically to submit a ticket)
+ */
 
-// TODO: Only do this if we get a message that we need to submit a ticket
-window.location = 'https://help.uber.com/h/65645907-4045-47e4-b162-2acdd7990205';
+function redirectToHelpPage(request) {
+  if (request.performRedirect) {
+    window.location = 'https://help.uber.com/h/65645907-4045-47e4-b162-2acdd7990205';
+  }
+}
+
+browser.runtime.sendMessage({action: 'isRedirectNeeded'}).then(redirectToHelpPage);
