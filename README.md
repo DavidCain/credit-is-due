@@ -88,3 +88,12 @@ promises.
 > automatically. If for some reason you still do not see the credits
 > deposited to your account by the 5th of the month, please let us know
 > and we’ll add them for you once again.
+
+
+## How does it work?
+This extension sits silently in the background, checking every couple of
+hours if it's time to submit my monthly ticket yet. If it's time, a
+browser notification appears reminding me to collect my $15. I can
+simply click the extension's button, and the script wall take care of
+the rest (forming the body of the support request & submitting). There's
+a pause for human authentication if need be!
