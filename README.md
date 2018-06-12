@@ -89,6 +89,20 @@ promises.
 > deposited to your account by the 5th of the month, please let us know
 > and we’ll add them for you once again.
 
+**April 6, 2018**: "Raechell" writes:
+
+> We've passed your question on to another team because they're experts
+> in solving problems like yours. We’ll let you know as soon as we have
+> an update.
+
+(A phone call followed, with more promises that the problem was resolved)
+
+**May 7, 2018**: "Benedick" writes:
+
+> I've updating your account so that you've received the benefit for
+> this month, and will automatically receive it on the first of the
+> month moving forward.
+
 
 ## How does it work?
 This extension sits silently in the background, checking every couple of
