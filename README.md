@@ -18,6 +18,10 @@ problem worth automating, no?
   <a href="https://xkcd.com/1319">XKCD #1319</a>, "Automation"
 </p>
 
+**Update**: As of June 2018, my problem has officially been resolved! It
+only took ten months, about a dozen conversations with support staff,
+and a few phone calls.
+
 
 ## How did this happen?
 I was one of many people who chose to #deleteuber. Before deletion, my
